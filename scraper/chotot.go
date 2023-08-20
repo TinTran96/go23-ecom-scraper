@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/chromedp/cdproto/cdp"
@@ -73,8 +74,12 @@ func ChoTotScrapper(urlInput string, limitPage int) []ChoTotItem {
 			choTotItems = append(choTotItems, chototItem)
 		}
 		i++
-
-		urlPaginate = fmt.Sprintf("%s&page=%d", urlInput, i)
+		//
+		if strings.Index(urlInput, "?") != -1 {
+			urlPaginate = fmt.Sprintf("%s&page=%d", urlInput, i)
+		} else {
+			urlPaginate = fmt.Sprintf("%s?page=%d", urlInput, i)
+		}
 	}
 
 	return choTotItems
