@@ -3,6 +3,8 @@
 
 Data Scraping from E-commerce Websites: Chotot, and Lazada.
 
+Demo Video: [Youtube](https://youtu.be/pY0gu1pWHsg)
+
 
 ## Tech Stack
 - Go v1.20.6
